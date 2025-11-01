@@ -1,4 +1,4 @@
-const API_BASE_URL = '/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || '/api';
 
 // Function to get CSRF token from cookies
 function getCookie(name) {
