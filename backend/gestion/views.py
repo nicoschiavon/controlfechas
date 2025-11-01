@@ -5,6 +5,13 @@ from datetime import date, timedelta
 from rest_framework.response import Response
 from rest_framework.decorators import action
 
+from django.shortcuts import render
+
+def index_react(request):
+    # Como agregamos BASE_DIR / 'frontend' / 'build' a TEMPLATES, 
+    # podemos renderizar directamente 'index.html'
+    return render(request, 'index.html')
+
 class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
