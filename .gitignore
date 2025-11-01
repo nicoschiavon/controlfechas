@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Django
+*.log
+*.sqlite3
+db.sqlite3
+/media
+/static
+.env
+
+# React
+node_modules/
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.idea/
+.vscode/
+
+# ngrok (if logs are generated)
+ngrok.log
