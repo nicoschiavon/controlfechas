@@ -1,0 +1,441 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-smoothing: grayscale;
+  background-color: #2c3e50; /* Dark background for the body */
+  color: #ecf0f1; /* Light text color */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #34495e; /* Darker header */
+  padding: 20px;
+  color: #ecf0f1;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav button {
+  background-color: #3498db; /* Blue button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+header nav button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+footer {
+  background-color: #34495e; /* Darker footer */
+  padding: 10px;
+  color: #ecf0f1;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  padding: 20px;
+  margin: 20px auto;
+  border: 1px solid #4a627a; /* Darker border */
+  border-radius: 8px;
+  max-width: 900px;
+  background-color: #3b536b; /* Darker section background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #ecf0f1; /* Light text for sections */
+}
+
+section h2 {
+  color: #ecf0f1;
+}
+
+/* Responsive table container */
+.table-responsive {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  margin-top: 15px;
+}
+
+table {
+  width: 100%;
+  min-width: 700px; /* Ensure table doesn't shrink too much */
+  border-collapse: collapse;
+  background-color: #4a627a; /* Darker table background */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th, table td {
+  border: 1px solid #5d7f9e; /* Lighter border for cells */
+  padding: 12px;
+  text-align: left;
+  color: #ecf0f1;
+}
+
+table th {
+  background-color: #5d7f9e; /* Darker header for tables */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background-color: #4a627a; /* Alternate row color */
+}
+
+table tr:hover {
+  background-color: #607d8b; /* Hover effect for rows */
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+form input[type="text"],
+form input[type="date"],
+form input[type="number"],
+form select {
+  width: calc(100% - 24px);
+  padding: 12px;
+  border: 1px solid #5d7f9e;
+  border-radius: 6px;
+  background-color: #3b536b;
+  color: #ecf0f1;
+  box-sizing: border-box;
+}
+
+form input[type="text"]::placeholder,
+form input[type="number"]::placeholder {
+  color: #bdc3c7;
+}
+
+form button {
+  background-color: #2ecc71;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #27ae60;
+}
+
+form button[type="button"] {
+  background-color: #e74c3c;
+}
+
+form button[type="button"]:hover {
+  background-color: #c0392b;
+}
+
+/* Priority Colors for table rows */
+.red {
+  background-color: #e74c3c !important;
+  color: white;
+}
+
+.yellow {
+  background-color: #f1c40f !important;
+  color: #34495e;
+}
+
+.green {
+  background-color: #2ecc71 !important;
+  color: white;
+}
+
+/* Modal Overlay */
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
+
+/* Modal Content */
+.ReactModal__Content {
+  position: relative;
+  background-color: #3b536b;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  color: #ecf0f1;
+  outline: none;
+  transform: scale(0.5);
+  transition: transform 200ms ease-in-out;
+}
+
+.ReactModal__Content--after-open{
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close{
+  transform: scale(0.5);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #4a627a;
+  padding-bottom: 10px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #ecf0f1;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  color: #e74c3c;
+}
+
+/* Calendar specific styling */
+.react-calendar {
+  width: 100%; /* Make calendar responsive */
+  max-width: 400px; /* Limit max width */
+  background-color: #122b44 !important; 
+  border: 1px solid #081b2e;
+  border-radius: 8px;
+  line-height: 1.125em;
+  font-family: inherit;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 0.5em;
+}
+
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 1em;
+  color: #eff2f3; /* Ensure navigation buttons are visible */
+  transition: background-color 0.3s ease;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #4a627a;
+  border-radius: 5px;
+}
+
+.react-calendar__navigation button[disabled] {
+  background-color: #3b536b;
+  color: #7f8c8d;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+  color: #bdc3c7; /* Weekday text color */
+}
+
+.react-calendar__tile {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 10px 6.6667px;
+  text-align: center;
+  line-height: normal;
+  color: #ecf0f1; /* Default number color */
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #4a627a;
+  border-radius: 5px;
+}
+
+.react-calendar__tile--now {
+  background: #3498db;
+  color: white;
+  border-radius: 5px;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #2980b9;
+}
+
+.react-calendar__tile--hasActive {
+  background: #5d7f9e;
+  border-radius: 5px;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #4a627a;
+}
+
+.react-calendar__tile--active {
+  background: #2980b9;
+  color: white;
+  border-radius: 5px;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1f6b9c;
+}
+
+.react-calendar__month-view__days__day {
+  color: #ecf0f1; /* Ensure day numbers are visible */
+}
+
+/* Explicitly set color for inactive/other non-highlighted days within the tile */
+.react-calendar__month-view__days__day--weekend {
+  color: #e74c3c; /* Red for weekend in dark theme */
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #7f8c8d; /* Faded color for days of neighboring months */
+}
+
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+  color: #ecf0f1; /* Ensure year/decade/century view text is visible */
+}
+
+.react-calendar__tile mark {
+  background: none;
+  color: inherit;
+}
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #4a627a;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  header nav button {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin: 5px;
+  }
+
+  section {
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 95%;
+  }
+
+  .table-responsive {
+    margin-left: -20px; /* Adjust for section padding */
+    margin-right: -20px; /* Adjust for section padding */
+    width: calc(100% + 40px); /* Expand to cover full width of section */
+  }
+
+  table {
+    min-width: 600px; /* Adjust minimum width for smaller screens */
+  }
+
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="number"],
+  form select {
+    width: calc(100% - 20px); /* Adjust for smaller padding */
+  }
+
+  form button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  header nav button {
+    display: block;
+    width: calc(100% - 10px);
+    margin: 5px auto;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+
+  table {
+    min-width: 500px; /* Further adjust minimum width */
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+}
