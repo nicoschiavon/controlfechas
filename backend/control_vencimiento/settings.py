@@ -68,7 +68,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR / 'templates',
-            BASE_DIR / 'frontend' / 'build',
+            BASE_DIR / 'build',
             ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -131,7 +131,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'frontend' / 'build' / 'static', # <<-- RUTA CRÍTICA para los estáticos de React
+    BASE_DIR / 'build' / 'static', # <<-- RUTA CRÍTICA para los estáticos de React
 ]
 
 STORAGES = {
